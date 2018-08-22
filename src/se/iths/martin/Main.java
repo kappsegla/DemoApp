@@ -11,24 +11,33 @@ public class Main {
     public static void main(String[] args) {
         // write your code here
         Scanner sc = new Scanner(System.in);
-
+/*
         //Jämförelse av textsträngar
-        String a = sc.nextLine();
+        String nextLine = sc.nextLine();
 
-        if (a.equals("Hej") ) {
+        if (nextLine.equals("Hej") ) {
             System.out.println("Samma text");
         }
         else
         {
             System.out.println("Ej samma");
         }
+*/
+        for (int b = 40; b >= 30; b--) {
+            System.out.println(b);
+        }
 
+        int value = 2;
+        while( value < 13 ) {
+            System.out.println(value);
+            value += 2;
+        }
 
 
     /*    //Rounding to nearest integer
         float value = sc.nextFloat();
 
-        int a = (int)(value + 0.5f);
+        int nextLine = (int)(value + 0.5f);
 */
 /*      System.out.println("Hello World!");
         System.out.println("Hello World!");
