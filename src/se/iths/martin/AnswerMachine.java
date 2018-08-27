@@ -13,6 +13,10 @@ public class AnswerMachine {
 
         String input = sc.nextLine();
 
+        if(  input.equals("Name?") ){
+            System.out.println("My name is Maja, what's yours?");
+        }
+
 
     }
 }
