@@ -9,14 +9,20 @@ public class AnswerMachine {
 
         String someText = "Say something: ";
 
-        System.out.println(someText);
+        while (true) {
+            System.out.println(someText);
+            String input = sc.nextLine();
 
-        String input = sc.nextLine();
-
-        if(  input.equals("Name?") ){
-            System.out.println("My name is Maja, what's yours?");
+            if (input.equals("Name?")) {
+                System.out.println("My name is Maja, what's yours?");
+            } else if (input.contains("Name")) {
+                System.out.println("My name is Maja, what's yours?");
+            } else if (input.equals("hej då")) {
+                break;
+                //return;
+            } else {
+                System.out.println("What?");
+            }
         }
-
-
     }
 }
