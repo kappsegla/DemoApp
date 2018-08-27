@@ -7,6 +7,12 @@ import java.util.Scanner;
 
 public class AnswerMachine {
 
+    public static void printCurrentDate() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date();
+        System.out.println(dateFormat.format(date));
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -17,20 +23,20 @@ public class AnswerMachine {
             String input = sc.nextLine();
 
             if (input.equals("Name?")) {
-                System.out.println("My name is Maja, what's yours?");
+                printYourName();
             } else if (input.contains("Name")) {
-                System.out.println("My name is Maja, what's yours?");
+                printYourName();
             } else if (input.equals("hej då")) {
                 break;  //Avbryter while loopen och fortsätter med koden efter loopen.
                 //return;  //Avslutar metoden, blir samma resultat i det här fallet
-            } else if(input.contains("date") || input.contains("datum") ) {
-                DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                Date date = new Date();
-                System.out.println(dateFormat.format(date));
-            }
-            else {
+            } else if (input.contains("date") || input.contains("datum")) {
+                printCurrentDate();
+            } else {
                 System.out.println("What?");
             }
         }
+    }
+    public static void printYourName() {
+        System.out.println("My name is Maja, what's yours?");
     }
 }
