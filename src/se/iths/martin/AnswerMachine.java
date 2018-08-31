@@ -61,7 +61,6 @@ public class AnswerMachine {
                 int answer = addTwoNumbers(10.0, 10.0);
             }
             else if(input.startsWith("mul")){
-
                 //Parses a string with format "mul 4" into integer
                 int tabell = Integer.parseInt( input.substring(4) );
 
@@ -78,6 +77,7 @@ public class AnswerMachine {
                 System.out.println("What?");
             }
         }
+
     }
 
     public static void printMultiplicationTable(int tabell) {
