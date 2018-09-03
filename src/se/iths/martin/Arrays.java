@@ -1,6 +1,8 @@
 package se.iths.martin;
 
 
+import java.util.ArrayList;
+
 public class Arrays {
 
     public static int[] createArray(int x) {
@@ -25,9 +27,14 @@ public class Arrays {
 
     public static int[] doubleUpArray(int[] array){
         int[] doubleArray = new int[array.length * 2];
-        
 
+        //Fast and easy array copy
+        System.arraycopy( array, 0, doubleArray, 0, array.length  );
 
+//        for (int i = 0; i < array.length; i++) {
+//            doubleArray[i] = array[i];
+//        }
+        return doubleArray;
     }
 
 
@@ -35,6 +42,11 @@ public class Arrays {
 
         int[] arr = createArray(10);
         printArray(arr);
+        int[] darr = doubleUpArray(arr);
+        printArray(darr);
+
+
+
 
 
 //

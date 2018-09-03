@@ -9,8 +9,20 @@ public class Main {
     lines
      */
     public static void main(String[] args) {
-        // write your code here
-        Scanner sc = new Scanner(System.in);
+
+        Rectangle rectangle = new Rectangle();
+
+        rectangle.setHeight(10);
+        rectangle.setWidth(10);
+
+        System.out.println( rectangle.getWidth() );
+        System.out.println( rectangle.getHeight() );
+        System.out.println(rectangle.);
+
+//
+//
+//        // write your code here
+//        Scanner sc = new Scanner(System.in);
 /*
         //Jämförelse av textsträngar
         String nextLine = sc.nextLine();
@@ -23,15 +35,15 @@ public class Main {
             System.out.println("Ej samma");
         }
 */
-        for (int b = 40; b >= 30; b--) {
-            System.out.println(b);
-        }
-
-        int value = 2;
-        while( value < 13 ) {
-            System.out.println(value);
-            value += 2;
-        }
+//        for (int b = 40; b >= 30; b--) {
+//            System.out.println(b);
+//        }
+//
+//        int value = 2;
+//        while( value < 13 ) {
+//            System.out.println(value);
+//            value += 2;
+//        }
 
 
     /*    //Rounding to nearest integer
