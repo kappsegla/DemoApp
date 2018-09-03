@@ -5,6 +5,12 @@ public class Adress {
     private String city;
     private int houseNumber;
 
+    public Adress(String street, String city, int houseNumber) {
+        this.street = street;
+        this.city = city;
+        this.houseNumber = houseNumber;
+    }
+
     public String getStreet() {
         return street;
     }

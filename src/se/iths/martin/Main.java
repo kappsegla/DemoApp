@@ -1,5 +1,6 @@
 package se.iths.martin;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -10,17 +11,82 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        Rectangle rectangle = new Rectangle();
-        Rectangle rectangle1 = new Rectangle();
+        Point p1 = new Point(1.0, 1.0);
 
-        rectangle.setHeight(100);
-        rectangle.setWidth(10);
+        Point p2 = new Point(4.0, 5.0);
 
-        System.out.println( rectangle.getWidth() );
-        System.out.println( rectangle.getHeight() );
-        System.out.println(rectangle.isSquare());
+        System.out.println( p1.distanceTo(p2) );
+        System.out.println( p1.distanceTo(p1) );
 
-        System.out.println(rectangle1.getWidth());
+        Point p3 = new Point(p1);
+        Point p4 = p1;
+
+        int[] array = new int[5];
+        int[] array2 = array.clone();
+
+        Point[] points = new Point[2];
+
+        points[0] = new Point(1.0, 1.0);
+        points[1] = new Point(p3);
+
+        Point[] points2 = points.clone();
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        ArrayList<Rectangle> rectangleArrayList = new ArrayList<Rectangle>();
+//
+//        rectangleArrayList.add( new Rectangle() );
+//
+//        //Lagring av primitiva typer ej möjligt i ArrayList
+//        //Använd motsvarande klass och autoboxing.
+//        ArrayList<Integer> arrayList = new ArrayList<>();
+//
+//
+//        arrayList.add( 2 );
+
+
+
+
+
+
+
+
+//        Adress adress = new Adress("Snorgatan","Kalmar",77);
+//        Employee employee = new Employee("Martin",40, adress);
+//        Employee employee1 = new Employee("Anna",32, new Adress("Storgatan","Göteborg",1));
+//
+//        System.out.println(employee.getName() + " från " + employee.getAdress().getCity());
+//
+//        System.out.println(employee1.getName() + " från " + employee1.getAdress().getCity());
+//
+//        employee1.setAdress( employee.getAdress() );
+//        System.out.println(employee1.getName() + " från " + employee1.getAdress().getCity());
+//
+//
+//        Rectangle rectangle = new Rectangle();
+//        Rectangle rectangle1 = new Rectangle();
+//
+//        rectangle.setHeight(100);
+//        rectangle.setWidth(10);
+
+
+
+        //
+//        System.out.println( rectangle.getWidth() );
+//        System.out.println( rectangle.getHeight() );
+//        System.out.println(rectangle.isSquare());
+//
+//        System.out.println(rectangle1.getWidth());
 
 
 //

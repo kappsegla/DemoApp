@@ -3,6 +3,20 @@ package se.iths.martin;
 public class Employee {
     private String name;
     private int age;
+    private Adress adress;
+
+    //Default constructor
+//    public Employee() {
+//
+//    }
+
+    public Employee(String name, int age, Adress adress)
+    {
+        this.name = name;
+        this.age = age;
+        this.adress = adress;
+    }
+
 
     public String getName() {
         return name;
@@ -28,6 +42,5 @@ public class Employee {
         this.adress = adress;
     }
 
-    private Adress adress;
 
 }

@@ -13,6 +13,7 @@ public class Rectangle {
     }
 
     //No backing field getter
+    @Deprecated
     public int getArea()
     {
         return width * height;
@@ -33,7 +34,7 @@ public class Rectangle {
         checkSquare();
     }
 
-    public void checkSquare() {
+    private void checkSquare() {
         if( this.height == this.width)
             square = true;
         else
