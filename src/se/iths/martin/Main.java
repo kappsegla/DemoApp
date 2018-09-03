@@ -11,13 +11,17 @@ public class Main {
     public static void main(String[] args) {
 
         Rectangle rectangle = new Rectangle();
+        Rectangle rectangle1 = new Rectangle();
 
-        rectangle.setHeight(10);
+        rectangle.setHeight(100);
         rectangle.setWidth(10);
 
         System.out.println( rectangle.getWidth() );
         System.out.println( rectangle.getHeight() );
-        System.out.println(rectangle.);
+        System.out.println(rectangle.isSquare());
+
+        System.out.println(rectangle1.getWidth());
+
 
 //
 //
