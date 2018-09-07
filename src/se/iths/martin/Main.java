@@ -1,9 +1,24 @@
 package se.iths.martin;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
+
+    public void printInfo(String s, int size, boolean bold){
+
+
+    }
+    public void printInfo(String s, int size){
+        printInfo(s,size,false);
+    }
+
+    public void printInfo(String s){
+        printInfo(s,12);
+    }
+
+
 
     /*
     Many
@@ -11,9 +26,18 @@ public class Main {
      */
     public static void main(String[] args) {
 
+//        Main m = new Main();
+//        m.printInfo("För utskrift",12,false);
+//        m.printInfo("Normal utskrift");
+
         Point p1 = new Point(1.0, 1.0);
 
         Point p2 = new Point(4.0, 5.0);
+
+        System.out.println(p2);
+
+        String s = "Object: " + p2;
+
 
         System.out.println( p1.distanceTo(p2) );
         System.out.println( p1.distanceTo(p1) );
