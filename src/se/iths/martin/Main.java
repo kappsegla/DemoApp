@@ -26,6 +26,43 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        Random r = new Random();
+
+//        nextInt( (maxvalue+1) - minvalue) + minvalue;
+
+        int random = 10 + r.nextInt(11);
+
+        int percent = r.nextInt(100);
+        if( percent < 60 )
+        {
+
+        }
+        if( r.nextDouble() < 0.6)
+        {
+
+        }
+
+        String s = "Hej ";
+        String t = "då!";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //        Main m = new Main();
 //        m.printInfo("För utskrift",12,false);
 //        m.printInfo("Normal utskrift");
@@ -35,9 +72,6 @@ public class Main {
         Point p2 = new Point(4.0, 5.0);
 
         System.out.println(p2);
-
-        String s = "Object: " + p2;
-
 
         System.out.println( p1.distanceTo(p2) );
         System.out.println( p1.distanceTo(p1) );

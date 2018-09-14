@@ -2,6 +2,13 @@ package se.iths.martin;
 
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * A class that represents a book with title and author information.
+ * @author Martin
+ * @version 1.0
+ * @since 0.1
+ * @see BookStore
+ */
 public class Book {
 
     private static int numberOfBooks;
@@ -19,12 +26,22 @@ public class Book {
         return author;
     }
 
+    /**
+     * Constructor for initializing a new Book.
+     * @param title Title of book.
+     * @param author Author name.
+     */
     public Book( String title, String author) {
         this.author = author;
         this.title = title;
         numberOfBooks++;
+
+
     }
 
+    /**
+     * @param title Title of book. Author will be No author by default.
+     */
     public Book(String title){
         this(title, "No author");
     }
