@@ -15,4 +15,9 @@ public class Teacher extends Person {
         super(name, age);
         this.subject = subject;
     }
+
+    @Override
+    public String saySomething() {
+        return " Teacher here.";
+    }
 }

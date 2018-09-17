@@ -24,4 +24,17 @@ public class Person {
         this.name = name;
         this.age = age;
     }
+
+
+    public String saySomething() {
+        return "This is Person speaking.";
+    }
+
+    public static void print(Object s){
+        System.out.println("Normal print,  " + s.toString());
+    }
+
+    public static void print(String s){
+        System.out.println("String print,  " + s.toString());
+    }
 }
