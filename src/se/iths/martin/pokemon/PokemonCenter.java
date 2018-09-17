@@ -2,7 +2,7 @@ package se.iths.martin.pokemon;
 
 public class PokemonCenter {
 
-    private static Pokemon defaultPokemon = new Pokemon();
+    private static Pokemon defaultPokemon = new DefaultPokemon();
 
     public static Pokemon CreatePokemon(String type) {
         switch (type) {

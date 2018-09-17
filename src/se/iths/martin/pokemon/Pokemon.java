@@ -1,11 +1,12 @@
 package se.iths.martin.pokemon;
 
-public class Pokemon {
+//Abstract class, no instances can be created
+public abstract class Pokemon {
 
-    public void talk(){
+    public  void talk(){
+
     }
 
-    public void attack(){
-        
-    }
+    //Must be overridden in subclass
+    public abstract void attack();
 }
