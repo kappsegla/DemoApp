@@ -10,6 +10,8 @@ public class ComputersDemo {
         Computer c2 = new Macintosh();
         Macintosh macintosh = new Macintosh();
 
+        System.out.println(c);
+
 
         c.printYourInventor();
         c1.printYourInventor();

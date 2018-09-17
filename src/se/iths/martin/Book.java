@@ -2,6 +2,8 @@ package se.iths.martin;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
+
 /**
  * A class that represents a book with title and author information.
  * @author Martin
@@ -20,6 +22,21 @@ public class Book {
     @Override
     public String toString() {
         return author + " - " + title;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if( this == obj)
+            return true;
+        if( obj == null || this.getClass() != obj.getClass())
+            return false;
+        return this.getAuthor().equals(((Book)obj).getAuthor())
+                && this.getTitle().equals(((Book)obj).getTitle());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getAuthor(),getTitle());
     }
 
     public String getAuthor() {
@@ -60,6 +77,7 @@ public class Book {
 
     private String author;
     private String title;
+
 
 
 
