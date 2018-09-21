@@ -1,32 +1,50 @@
 package se.iths.martin.pokemon;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class PokemonDemo {
     public static void main(String[] args) {
 
-        ArrayList<Pokemon> pokemons = new ArrayList<>();
-
+        List<Pokemon> pokemons = new ArrayList<>();
         pokemons.add(PokemonCenter.CreatePokemon("Pikachu"));
         pokemons.add(PokemonCenter.CreatePokemon("Muk"));
         pokemons.add(PokemonCenter.CreatePokemon("Muk"));
 
-        Pokemon pokemon = PokemonCenter.CreatePokemon("Pikachu");
-        pokemon.talk();
-        pokemon.attack();
+        ListIterator<Pokemon> listIterator = pokemons.listIterator();
+        Iterator<Pokemon> iterator;
 
+        pokemons.sort();
 
-        if( pokemon instanceof Pikachu) {
-            //Pikachu pikachu = (Pikachu) pokemon;
-            System.out.println("YES, we are a Pikachu!");
+        while( listIterator.hasNext() )
+        {
+            //Get next Pokemon from list
+            Pokemon p = listIterator.next();
+            p.talk();
+//            if( p instanceof  Pikachu)
+//                listIterator.remove();
         }
 
-        pokemons.get(1).talk();
-        pokemons.get(1).attack();
 
-        pokemon = PokemonCenter.CreatePokemon("");
-        pokemon.talk();
-        pokemon.attack();
+
+//
+//
+//
+//        Pokemon pokemon = PokemonCenter.CreatePokemon("Pikachu");
+//        pokemon.talk();
+//        pokemon.attack();
+//
+//
+//        if( pokemon instanceof Pikachu) {
+//            //Pikachu pikachu = (Pikachu) pokemon;
+//            System.out.println("YES, we are a Pikachu!");
+//        }
+//
+//        pokemons.get(1).talk();
+//        pokemons.get(1).attack();
+//
+//        pokemon = PokemonCenter.CreatePokemon("");
+//        pokemon.talk();
+//        pokemon.attack();
 
     }
 }
