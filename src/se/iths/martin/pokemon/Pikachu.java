@@ -1,6 +1,10 @@
 package se.iths.martin.pokemon;
 
-public class Pikachu extends Pokemon{
+import java.lang.management.RuntimeMXBean;
+import java.util.ListIterator;
+
+public class Pikachu extends Pokemon {
+
     @Override
     public void talk() {
         System.out.println("Pikachu!!!");

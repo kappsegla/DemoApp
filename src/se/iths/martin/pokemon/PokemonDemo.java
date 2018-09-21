@@ -9,11 +9,17 @@ public class PokemonDemo {
 
         pokemons.add(PokemonCenter.CreatePokemon("Pikachu"));
         pokemons.add(PokemonCenter.CreatePokemon("Muk"));
-        pokemons.add(PokemonCenter.CreatePokemon(""));
+        pokemons.add(PokemonCenter.CreatePokemon("Muk"));
 
         Pokemon pokemon = PokemonCenter.CreatePokemon("Pikachu");
         pokemon.talk();
         pokemon.attack();
+
+
+        if( pokemon instanceof Pikachu) {
+            //Pikachu pikachu = (Pikachu) pokemon;
+            System.out.println("YES, we are a Pikachu!");
+        }
 
         pokemons.get(1).talk();
         pokemons.get(1).attack();
