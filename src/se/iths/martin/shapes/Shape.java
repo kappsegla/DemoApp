@@ -52,4 +52,9 @@ public abstract class Shape {
                    "Area   : " + getArea()+"\n";
         return s;
     }
+
+    public void resize(Resizable resizeMethod)
+    {
+        resizeMethod.resize(this);
+    }
 }
