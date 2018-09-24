@@ -45,7 +45,8 @@ public abstract class Shape {
 
     @Override
     public String toString() {
-        String s = "Längd  : " + getLength()+"\n" +
+        String s = this.getClass().getSimpleName()+"\n"+
+                   "Längd  : " + getLength()+"\n" +
                    "Höjd   : " + getHeight() +"\n" +
                    "Omkrets: " + getPerimeter()+"\n" +
                    "Area   : " + getArea()+"\n";

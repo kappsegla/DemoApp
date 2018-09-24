@@ -16,8 +16,8 @@ public class Ellipse extends Shape {
 
     @Override
     public double getPerimeter() {
-        double a = getLength();
-        double b = getHeight();
+        double a = getLength()/2.0;
+        double b = getHeight()/2.0;
         //https://sv.wikipedia.org/wiki/Ellips_(matematik)#Omkrets
         return Math.PI * ( 3*(a+b) - Math.sqrt((3*a + b)*(a + 3*b)));
     }
