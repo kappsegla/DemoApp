@@ -33,7 +33,7 @@ public class ShapesDemo {
 //        };
 
         //shapes.forEach(resizable::resize);
-
+        ((ArrayList<Shape>)shapes).get(0);
         for (Shape s : shapes) {
             s.resize(new Consumer<Shape>() {
                 @Override
