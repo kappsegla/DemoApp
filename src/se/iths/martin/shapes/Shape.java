@@ -8,6 +8,7 @@ public abstract class Shape {
     private double length;
     private double height;
 
+    //region Getters/Setters
     public double getLength() {
         return length;
     }
@@ -23,15 +24,24 @@ public abstract class Shape {
     public void setHeight(double height) {
         this.height = height;
     }
+    //endregion
 
     public abstract double getArea();
 
     public abstract double getPerimeter();
 
+    //region Constructors
     public Shape(double length, double height){
         this.length = length;
         this.height = height;
     }
+
+    //Copy constructor
+    public Shape(Shape shape){
+        this.length = shape.length;
+        this.height = shape.height;
+    }
+    //endregion
 
     @Override
     public String toString() {
