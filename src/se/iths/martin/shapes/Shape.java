@@ -1,6 +1,7 @@
 package se.iths.martin.shapes;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 public abstract class Shape {
 
@@ -53,8 +54,8 @@ public abstract class Shape {
         return s;
     }
 
-    public void resize(Resizable resizeMethod)
+    public void resize(Consumer<Shape> resizeMethod)
     {
-        resizeMethod.resize(this);
+        resizeMethod.accept(this);
     }
 }

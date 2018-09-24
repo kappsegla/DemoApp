@@ -1,6 +1,6 @@
 package se.iths.martin.shapes;
 
 @FunctionalInterface
-public interface Resizable {
-    void resize(Shape shape);
+public interface Resizable<T> {
+    void resize(T shape);
 }

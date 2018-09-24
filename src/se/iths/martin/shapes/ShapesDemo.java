@@ -1,8 +1,11 @@
 package se.iths.martin.shapes;
 
+import se.iths.martin.Book;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class ShapesDemo {
 
@@ -32,14 +35,13 @@ public class ShapesDemo {
         //shapes.forEach(resizable::resize);
 
         for (Shape s : shapes) {
-            s.resize(new Resizable() {
+            s.resize(new Consumer<Shape>() {
                 @Override
-                public void resize(Shape shape) {
+                public void accept(Shape shape) {
                     shape.setLength(shape.getLength() * 2.0);
                     shape.setHeight(shape.getHeight() * 2.0);
                 }
             });
-
             System.out.println(s);
         }
     }
