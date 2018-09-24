@@ -4,6 +4,7 @@ public class Muk extends Pokemon implements SlimeHandler {
 
     @Override
     public void talk() {
+        super.talk();
         System.out.println("Muk, muk, muk");
     }
 

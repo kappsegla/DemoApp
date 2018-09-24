@@ -10,12 +10,18 @@ public abstract class Pokemon{
         this.health = health;
     }
 
+    Pokemon(){
+        health = 10;
+    }
+
     private int health;
 
     public void talk(){
-
+        System.out.print("My health: " + health + " ");
     }
 
     //Must be overridden in subclass
     public abstract void attack();
 }
+
+

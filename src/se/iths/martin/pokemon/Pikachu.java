@@ -7,7 +7,7 @@ public class Pikachu extends Pokemon {
 
     @Override
     public void talk() {
-        System.out.println("Pikachu!!!");
+        super.talk(); System.out.println("Pikachu!!!");
     }
 
     @Override
