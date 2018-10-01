@@ -1,5 +1,8 @@
 package se.iths.martin.notes;
 
+import se.iths.martin.notes.validators.NoteValidator;
+import se.iths.martin.notes.validators.Validator;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,9 +21,10 @@ public class NotesHandler {
      * @return Returns the newly created Note instance
      */
     public Note createNote(String title, String body) {
-        //TODO:Validation goes here
         Note note = new Note(title, body);
-        notes.add(note);
+
+        if( NoteValidator.validate(note))
+            notes.add(note);
         return note;
     }
 
@@ -39,7 +43,7 @@ public class NotesHandler {
         return new Note("", "");
     }
 
-    //    editNote?
+    //    editNote? Just do a getNote and then change info with setTitle, setBody.
 
     public void deleteNote(Note note){
         notes.remove(note);

@@ -14,11 +14,9 @@ public class NotesProgram {
     private Presenter<Note> presenter;
 
     /**
-     *
      * @param presenter Takes a presenter object that will be used for presenting a Note.
      */
-    public NotesProgram(Presenter<Note> presenter)
-    {
+    public NotesProgram(Presenter<Note> presenter) {
         this.presenter = presenter;
     }
 
@@ -38,15 +36,37 @@ public class NotesProgram {
                 case 2:
                     getNote();
                     break;
+                case 3:
+                    deleteNote();
+                    break;
+                case 4:
+                    editNote();
+                    break;
             }
         }
     }
 
-    private void getNote() {
+    private void editNote() {
+    }
+
+    private void deleteNote() {
+        Note note = searchForNote();
+        if (note.getTitle().length() == 0)
+            System.out.println("no note with that title found");
+        else {
+            notesHandler.deleteNote(note);
+        }
+    }
+
+    private Note searchForNote() {
         System.out.print("Search for Note\nTitle to search for: ");
         String title = scanner.nextLine();
-        Note note = notesHandler.getNote(title);
-        if( note.getTitle().length() == 0)
+        return notesHandler.getNote(title);
+    }
+
+    private void getNote() {
+        Note note = searchForNote();
+        if (note.getTitle().length() == 0)
             System.out.println("no note with that title found");
         else {
             System.out.println(presenter.present(note));
@@ -61,7 +81,7 @@ public class NotesProgram {
         StringBuilder builder = new StringBuilder();
         String row = " ";
 
-        while( row.length() > 0 ) {
+        while (row.length() > 0) {
             row = scanner.nextLine();
             builder.append(row);
         }
@@ -73,7 +93,7 @@ public class NotesProgram {
         while (i < 0 || i >= count) {
             try {
                 i = scanner.nextInt();
-            }catch (InputMismatchException ex){
+            } catch (InputMismatchException ex) {
                 scanner.nextLine();
                 System.out.println("Felaktigt val.");
             }
@@ -94,7 +114,7 @@ public class NotesProgram {
 
     public static void main(String[] args) {
         Presenter<Note> notePresenter = new FullNotePresenter();
-        NotesProgram notesProgram = new NotesProgram( notePresenter );
+        NotesProgram notesProgram = new NotesProgram(notePresenter);
         notesProgram.run();
     }
 

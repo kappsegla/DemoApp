@@ -26,7 +26,7 @@ public class Note {
     }
 
     //region Getters/Setters
-    //Only get method for Date. Immutable variable. Read-only.
+    //Only get method for Date. Immutable field. Read-only.
     public Date getCreated() {
         return created;
     }
