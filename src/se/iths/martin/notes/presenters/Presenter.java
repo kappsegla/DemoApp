@@ -1,5 +1,7 @@
 package se.iths.martin.notes.presenters;
 
-public interface Presenter<T> {
-    public String present(T obj);
+import se.iths.martin.notes.Note;
+
+public interface Presenter {
+    String present(Note obj);
 }

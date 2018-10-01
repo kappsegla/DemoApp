@@ -14,14 +14,18 @@ public class NotesHandler {
 
     public NotesHandler(){
         //Configure NoteValidator
+        //Title must be at least 3 characters long
         NoteValidator.addValidator(new Validator<Note>() {
             @Override
             public boolean validate(Note obj) {
                 return obj.getTitle().length() > 2;
             }
         });
-        NoteValidator.addValidator(obj -> !(obj.getBody().length() < 2) );
+        //Title can't be Hej
         NoteValidator.addValidator(obj -> !obj.getTitle().equals("Hej"));
+        //Check for line separator in body text. More than one row.
+        String newline = System.getProperty("line.separator");
+        NoteValidator.addValidator(obj -> obj.getBody().contains( newline ));
     }
 
     //CRUD operations, Create, Read, Update, Delete

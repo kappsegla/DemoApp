@@ -6,17 +6,18 @@ import se.iths.martin.notes.presenters.Presenter;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.ServiceLoader;
 
 public class NotesProgram {
 
     private NotesHandler notesHandler = new NotesHandler();
     private Scanner scanner = new Scanner(System.in);
-    private Presenter<Note> presenter;
+    private Presenter presenter;
 
     /**
      * @param presenter Takes a presenter object that will be used for presenting a Note.
      */
-    public NotesProgram(Presenter<Note> presenter) {
+    public NotesProgram(Presenter presenter) {
         this.presenter = presenter;
     }
 
@@ -79,12 +80,15 @@ public class NotesProgram {
         System.out.println("Body: ");
 
         StringBuilder builder = new StringBuilder();
+        String newline = System.getProperty("line.separator");
         String row = " ";
 
         while (row.length() > 0) {
             row = scanner.nextLine();
-            builder.append(row);
-            builder.append('\n');
+            if( row.length() > 0) {
+                builder.append(row);
+                builder.append(newline);
+            }
         }
         Note note = notesHandler.createNote(title, builder.toString());
     }
@@ -114,10 +118,16 @@ public class NotesProgram {
 
 
     public static void main(String[] args) {
-        Presenter<Note> notePresenter = new FullNotePresenter();
+        Presenter notePresenter = new FullNotePresenter();
+
+        //Loads all Presenter implementations specified in META-INF/services
+//        ServiceLoader<Presenter> loader = ServiceLoader.load(Presenter.class);
+//        for (Presenter pre :
+//                loader) {
+//            System.out.println(pre.present(new Note("Title","Body")));
+//        }
+
         NotesProgram notesProgram = new NotesProgram(notePresenter);
         notesProgram.run();
     }
-
-
 }
