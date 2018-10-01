@@ -14,9 +14,29 @@ public class NotesProgram {
             printMenu();
             int choice = choiceInput(5);
             System.out.println(choice);
-            if( choice == 0)
-                break;
+            switch (choice) {
+                case 0:
+                    return;
+                case 1:
+                    newNote();
+                    break;
+            }
         }
+    }
+
+    private void newNote() {
+        System.out.println("Create Note\nTitle: ");
+        String title = scanner.nextLine();
+        System.out.println("Body: ");
+
+        StringBuilder builder = new StringBuilder();
+        String row = " ";
+
+        while( row.length() > 0 ) {
+            row = scanner.nextLine();
+            builder.append(row);
+        }
+        Note note = notesHandler.createNote(title, builder.toString());
     }
 
     private int choiceInput(int count) {
