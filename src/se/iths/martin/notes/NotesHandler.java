@@ -12,6 +12,18 @@ public class NotesHandler {
 
     List<Note> notes = new ArrayList<>();
 
+    public NotesHandler(){
+        //Configure NoteValidator
+        NoteValidator.addValidator(new Validator<Note>() {
+            @Override
+            public boolean validate(Note obj) {
+                return obj.getTitle().length() > 2;
+            }
+        });
+        NoteValidator.addValidator(obj -> !(obj.getBody().length() < 2) );
+        NoteValidator.addValidator(obj -> !obj.getTitle().equals("Hej"));
+    }
+
     //CRUD operations, Create, Read, Update, Delete
     /**
      * Creates a new Note instance and stores it internally for later use
@@ -25,6 +37,8 @@ public class NotesHandler {
 
         if( NoteValidator.validate(note))
             notes.add(note);
+        else
+            System.out.println("Error in note");
         return note;
     }
 

@@ -84,6 +84,7 @@ public class NotesProgram {
         while (row.length() > 0) {
             row = scanner.nextLine();
             builder.append(row);
+            builder.append('\n');
         }
         Note note = notesHandler.createNote(title, builder.toString());
     }
