@@ -17,23 +17,23 @@ public class Note {
      * and accessed with method getCreated
      *
      * @param title Title of the note
-     * @param body Text body for the note
+     * @param body  Text body for the note
      */
-    public Note(String title, String body){
-       this.title = title;
-       this.body = body;
-       this.created = new Date(); //Creates a Date object with current time
+    public Note(String title, String body) {
+        this.title = title;
+        this.body = body;
+        this.created = new Date(); //Creates a Date object with current time
     }
 
     public Date getCreated() {
         return created;
     }
 
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title){
+    public void setTitle(String title) {
         this.title = title;
     }
 
@@ -43,5 +43,12 @@ public class Note {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    @Override
+    public String toString() {
+        return "Title: " + getTitle()
+                + "\nCreated: " + getCreated()
+                + "\n\n" + getBody();
     }
 }

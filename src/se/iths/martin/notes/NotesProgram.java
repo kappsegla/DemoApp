@@ -1,5 +1,9 @@
 package se.iths.martin.notes;
 
+import se.iths.martin.notes.presenters.FullNotePresenter;
+import se.iths.martin.notes.presenters.NotePresenter;
+import se.iths.martin.notes.presenters.Presenter;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -7,6 +11,13 @@ public class NotesProgram {
 
     private NotesHandler notesHandler = new NotesHandler();
     private Scanner scanner = new Scanner(System.in);
+    private Presenter<Note> presenter;
+
+    public NotesProgram(Presenter<Note> presenter)
+    {
+        this.presenter = presenter;
+    }
+
 
     public void run() {
 
@@ -20,7 +31,21 @@ public class NotesProgram {
                 case 1:
                     newNote();
                     break;
+                case 2:
+                    getNote();
+                    break;
             }
+        }
+    }
+
+    private void getNote() {
+        System.out.print("Search for Note\nTitle to search for: ");
+        String title = scanner.nextLine();
+        Note note = notesHandler.getNote(title);
+        if( note.getTitle().length() == 0)
+            System.out.println("no note with that title found");
+        else {
+            System.out.println(presenter.present(note));
         }
     }
 
@@ -64,7 +89,7 @@ public class NotesProgram {
 
 
     public static void main(String[] args) {
-        NotesProgram notesProgram = new NotesProgram();
+        NotesProgram notesProgram = new NotesProgram( new FullNotePresenter() );
         notesProgram.run();
     }
 
