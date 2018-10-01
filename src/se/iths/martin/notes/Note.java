@@ -25,6 +25,8 @@ public class Note {
         this.created = new Date(); //Creates a Date object with current time
     }
 
+    //region Getters/Setters
+    //Only get method for Date. Immutable variable. Read-only.
     public Date getCreated() {
         return created;
     }
@@ -44,6 +46,7 @@ public class Note {
     public void setBody(String body) {
         this.body = body;
     }
+    //endregion
 
     @Override
     public String toString() {

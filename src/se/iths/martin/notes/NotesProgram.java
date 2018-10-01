@@ -13,6 +13,10 @@ public class NotesProgram {
     private Scanner scanner = new Scanner(System.in);
     private Presenter<Note> presenter;
 
+    /**
+     *
+     * @param presenter Takes a presenter object that will be used for presenting a Note.
+     */
     public NotesProgram(Presenter<Note> presenter)
     {
         this.presenter = presenter;
@@ -89,7 +93,8 @@ public class NotesProgram {
 
 
     public static void main(String[] args) {
-        NotesProgram notesProgram = new NotesProgram( new FullNotePresenter() );
+        Presenter<Note> notePresenter = new FullNotePresenter();
+        NotesProgram notesProgram = new NotesProgram( notePresenter );
         notesProgram.run();
     }
 

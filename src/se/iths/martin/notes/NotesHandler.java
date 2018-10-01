@@ -10,7 +10,6 @@ public class NotesHandler {
     List<Note> notes = new ArrayList<>();
 
     //CRUD operations, Create, Read, Update, Delete
-
     /**
      * Creates a new Note instance and stores it internally for later use
      *
@@ -39,14 +38,10 @@ public class NotesHandler {
         }
         return new Note("", "");
     }
-//
-//    deleteNote
-//
-//    editNote
-//
-//    getNote
-//
-//    combineNotes?
-//
-//    viewNote?
+
+    //    editNote?
+
+    public void deleteNote(Note note){
+        notes.remove(note);
+    }
 }
